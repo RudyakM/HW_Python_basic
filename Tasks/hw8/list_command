@@ -1,0 +1,26 @@
+Linux console:
+- pwd (Посмотреть в какой директории сейчас нахожусь)
+- ls (Посмотреть содержимое)
+- cd <name> (Ввойти в папку)
+
+Other:
+- Ctrl + Alt + <Down, Up> (Поставить курсор на нескольких строках)
+
+Command for list and set:
+- <name>.append() - добавить елемент
+- <name>.clear() - очистить структуру данных
+- <name>.copy(<name lst or set>) - скопировать другую структуру данных
+- <name>.count(sub[, start[, end]]) - ищет елемент sub в списке или строке начиная с индекса start(по умол. 0) - заканчивая end
+- <name>.extend -
+- <name>.index(<name element>) - узнать индекс елемента в скобках
+- <name>.insert(index, x) - вставляет елемент x по index
+- <name>.pop(<name or last element>) - удаление определленого или последнего елемента и вывести его на екран
+- <name>.remove() - удалить определенный елемент
+- <name>.reverse() - развернуть
+- <name>.sort() - сортировка
+
+Command set:
+- a.intersection(b) - пересечение
+- a.symmetricDifference(b) - симметрическая разность
+- a.union(b) - обьединение
+- a.difference(b) - разность
