@@ -6,7 +6,7 @@ theme = {'sport': ('football', 'basketball', 'voleyball', 'hockey'),
         }
 
 while True:
-    user_input = input(f'Выберете тему {[i for i in theme.keys()]}: ')
+    user_input = input(f'Выберете тему: {[i for i in theme.keys()]}:')
 
     if user_input in theme.keys():
         word = random.choice(theme.get(user_input))
