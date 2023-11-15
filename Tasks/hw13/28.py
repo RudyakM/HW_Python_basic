@@ -17,6 +17,7 @@ while True:
 
 tries = len(word) * 2
 unguess_word = list('_' * len(word))
+guessed_word = ''
 
 print('\nYour word:', *unguess_word,
       '\nThe length of your word:', len(word), 
@@ -39,6 +40,7 @@ while True:
                     unguess_word[i-1] = word[i]  
                 else:
                     print(*unguess_word[i-1], end='')
+            print()
             
             if '_' not in unguess_word:
                 print('\n\nYou Win')
