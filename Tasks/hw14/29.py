@@ -9,7 +9,7 @@ numbers = {
 result = []
 # 1
 print('# 1')
-print([numbers[i] for i in sorted(numbers, key= lambda x: int(x))])
+print([numbers.get(i) for i in sorted(numbers, key= lambda x: int(x))])
 
 
 # 2
