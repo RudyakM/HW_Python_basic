@@ -1,8 +1,0 @@
-12 + 10 = 22
-10 / 2 = something went wrong...
-70 * 3 = 210
-2 / 0 = something went wrong...
-34 - 109 = -75
-df + 4 = error
-000 + 45 = 45
-111111111 = error
