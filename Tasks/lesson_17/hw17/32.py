@@ -15,12 +15,13 @@ if __name__ == '__main__':
             print('Такой операции нет')
             continue
         else:
-            result = Calcilation.calc(operand_1, operation, operand_2)
-            history = Calcilation.historic(history, operand_1, operation, operand_2, result)
+            pointer = Calcilation(operand_1, operation, operand_2)
+            result = pointer.calc()
+            history = pointer.historic(history, result)
             print(f'\n{operand_1} {operation} {operand_2} = {result}\n')
         
         if input('History? y/n: ') == 'y':
-            print(Calcilation.print_history(history))
+            print(pointer.print_history(history))
         if input('Continue? y/n: ') == 'n':
             print('Bye')
             break

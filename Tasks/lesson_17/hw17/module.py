@@ -1,6 +1,14 @@
 class Calcilation:
 
-    def calc(operand_1, operation, operand_2):
+    def __init__(self, operand_1=0, operation='+', operand_2=0):
+        self.operand_1 = operand_1
+        self.operand_2 = operand_2
+        self.operation = operation
+
+    def calc(self):
+        operation = self.operation
+        operand_1 = self.operand_1
+        operand_2 = self.operand_2
         if operation == '+':
             result = operand_1 + operand_2
             return result 
@@ -20,9 +28,9 @@ class Calcilation:
             result = operand_1 // operand_2 
             return result
         
-    def historic(history, operand_1, operation, operand_2, result):
-        history += f'{operand_1} {operation} {operand_2} = {result}\n'
+    def historic(self, history, result):
+        history += f'{self.operand_1} {self.operation} {self.operand_2} = {result}\n'
         return history
 
-    def print_history(history):
+    def print_history(self, history):
         return f'\nHistory:\n{history}'
