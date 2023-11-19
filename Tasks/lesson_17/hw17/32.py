@@ -1,4 +1,4 @@
-from module import calc
+from module import Calcilation
 
 history = ''
 
@@ -15,12 +15,12 @@ if __name__ == '__main__':
             print('Такой операции нет')
             continue
         else:
-            result = calc(operand_1, operation, operand_2)
-            history += f'{operand_1} {operation} {operand_2} = {result}\n'
-            print(f'{operand_1} {operation} {operand_2} = {result}')
+            result = Calcilation.calc(operand_1, operation, operand_2)
+            history = Calcilation.historic(history, operand_1, operation, operand_2, result)
+            print(f'\n{operand_1} {operation} {operand_2} = {result}\n')
         
         if input('History? y/n: ') == 'y':
-            print(f'\nHistory:\n{history}')
+            print(Calcilation.print_history(history))
         if input('Continue? y/n: ') == 'n':
             print('Bye')
             break
