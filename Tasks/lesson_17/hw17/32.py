@@ -1,7 +1,6 @@
 from module import Calcilation
 
 history = ''
-
 if __name__ == '__main__':
     while True:
         operand_1 = int(input('Num 1: '))
@@ -15,13 +14,13 @@ if __name__ == '__main__':
             print('Такой операции нет')
             continue
         else:
-            pointer = Calcilation(operand_1, operation, operand_2)
+            pointer = Calcilation(operand_1, operation, operand_2, history)
             result = pointer.calc()
-            history = pointer.historic(history, result)
+            history = pointer.historic(result)
             print(f'\n{operand_1} {operation} {operand_2} = {result}\n')
         
         if input('History? y/n: ') == 'y':
-            print(pointer.print_history(history))
+            pointer.print_history()
         if input('Continue? y/n: ') == 'n':
             print('Bye')
             break
