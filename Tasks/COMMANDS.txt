@@ -17,6 +17,9 @@ Linux console:
     - mkdir test        - создает папку с названием «test» там, где вы находитесь
     - mkdir /home/test  - создает папку «test» в директории /home, даже если вы сейчас не там
 
+    - zip test_file     - сжать тест файл
+    - unzip test file   - разархивировать файл 
+
     - touch app.log - создает файл
     
     - rm test.txt         — удалить файл test.txt
