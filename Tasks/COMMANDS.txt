@@ -36,7 +36,20 @@ Linux console:
         - :q! — закрыть редактор без сохранения (если что-то меняли, то просто «:q» не проканает)
         - :w  — сохранить файл;
 
-
+git commands:
+    - git clone - клонировать удаленный репозиторий
+    - git status - статус отслеживания файлов гитом
+    - git add --all - добавить все изменения в гит
+    - git commit -m “commit message” - коммит изменений с описанием
+    - git push origin branch_name - добавление изменений с локального репозитория на удаленный
+    - git pull origin branch_name - стягивание изменений с удаленного репозитория в локальный
+    - git fetch origin branch_name - стянуть конкретную ветку с удаленного репозитория на локалку
+    - git checkout / git checkout -b branch_name - переключение между ветками, флаг -b создаст новую ветку (если такой ранее не было) 
+    - git branch - выводит список веток
+    - git merge branch_name - выполнит мердж указанной ветки в текущую
+    - git branch -m branch_name - переименование текущей ветки, где branch_name новое имя
+    - git branch -d/-D branch_name - удаляет локальную ветку
+    - git rm path/file_name - удалить фаил из гит
 
 Other:
     - Ctrl + Alt + <Down, Up> (Поставить курсор на нескольких строках)
