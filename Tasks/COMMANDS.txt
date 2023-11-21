@@ -38,18 +38,34 @@ Linux console:
 Other:
     - Ctrl + Alt + <Down, Up> (Поставить курсор на нескольких строках)
 
+
+
 pip:
     - sudo apt install python3-pip
     - pip install --upgrade pip
+    - pip help                                  - помощь по доступным командам.
+    - pip install package_name                  - установка пакета(ов).
+    - pip uninstall package_name                - удаление пакета(ов).
+    - pip list                                  - список установленных пакетов.
+    - pip show package_name                     - показывает информацию об установленном пакете.
+    - pip search                                - поиск пакетов по имени.
+    - pip --proxy user:passwd@proxy.server:port - использование с прокси.
+    - pip install -U                            - обновление пакета(ов).
+    - pip install --force-reinstall             - при обновлении, переустановить пакет, даже если он последней версии.
+    
     requirements:
         - pip freeze > requirements.txt
         - pip install -r requirements.txt
+
+
 
 virtual environment:
     - sudo apt install python3.11-venv
     - python3.11 -m venv venv
     - source venv/bin/activate
     - rm -rf venv/
+
+
 
 gitignore:
     __pychache__:
