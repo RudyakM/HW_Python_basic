@@ -1,28 +1,17 @@
 def calc(operation='+'):
-    if operation == '+':
-        return plus()
-    elif operation == '-':  
-        return minus()
-    elif operation == '*':  
-        return multiply()
-    else:
-        return err()
+    operation_plus = '+'
+    operation_minus = '-'
+    operation_mult = '*'
 
-
-def plus(x=None, y=None):
-    return lambda x, y: x + y
-
-
-def minus(x=None, y=None):
-    return lambda x, y: x - y
-
-
-def multiply(x=None, y=None):
-    return lambda x, y: x * y
-
-
-def err(x=None, y=None):
-    return lambda x, y: 'something went wrong...'
+    for _ in operation:
+        if _ == operation_plus:
+            return lambda x, y: x + y
+        elif _ == operation_minus:
+            return lambda x, y: x - y
+        elif _ == operation_mult:
+            return lambda x, y: x * y
+        else:
+            return lambda x, y: 'something went wrong...'
 
 
 math_file_way = '/home/maksym/project/Hillel_Python_basic/Tasks/hw15/math.txt'
@@ -31,11 +20,11 @@ result_file_way = '/home/maksym/project/Hillel_Python_basic/Tasks/hw15/result.tx
 with open(math_file_way, 'r') as file_math:
     with open(result_file_way, 'w') as file_result:
         for line in file_math:
-            lst = line.split()
+            equation_list = line.split()
             try:
-                calculater = calc(lst[1])
-                file_result.write(f'{lst[0]} {lst[1]} {lst[-1]} = {calculater(int(lst[0]), int(lst[-1]))}\n')
+                result = calc(equation_list[1])
+                file_result.write(f'{equation_list[0]} {equation_list[1]} {equation_list[-1]} = {result(int(equation_list[0]), int(equation_list[-1]))}\n')
             except IndexError:
                 file_result.write(f'{line} = error\n')
             except ValueError:
-                file_result.write(f'{lst[0]} {lst[1]} {lst[-1]} = error\n')
+                file_result.write(f'{equation_list[0]} {equation_list[1]} {equation_list[-1]} = error\n')
