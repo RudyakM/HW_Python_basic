@@ -25,7 +25,7 @@ with open(math_file_way, 'r') as file_math:
             item_1, operator, item_2 = map(str.strip, item.split())
             item_1, item_2 = int(item_1), int(item_2)
             result = calc(operator)(item_1, item_2)
-        except Exception as e:
+        except Exception:
             output = f'{item} = error'
         else:
             output = f'{item} = {result}'
