@@ -12,6 +12,6 @@ def fib(n):
     else:
         return fib(n - 1) + fib(n - 2)
     
-lst = ['1', '2', '3', '4', '5', '6', '7', '8']
-print(list(map(int, lst)))
-# print(fib(6))
+
+print(fib(6))
+print(rec(4))
