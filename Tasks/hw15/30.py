@@ -1,30 +1,34 @@
-def calc(operation='+'):
-    operation_plus = '+'
-    operation_minus = '-'
-    operation_mult = '*'
-
-    for _ in operation:
-        if _ == operation_plus:
-            return lambda x, y: x + y
-        elif _ == operation_minus:
-            return lambda x, y: x - y
-        elif _ == operation_mult:
-            return lambda x, y: x * y
-        else:
-            return lambda x, y: 'something went wrong...'
+def calc(operator='+'):
+    def err(*input_data):
+        return 'something went wrong'
+    
+    d = {'+': lambda x, y: x + y,
+         '-': lambda x, y: x - y,
+         '*': lambda x, y: x * y,
+        }
+    
+    if operator in d:
+        return d.get(operator)
+    else:
+        return err
 
 
 math_file_way = '/home/maksym/project/Hillel_Python_basic/Tasks/hw15/math.txt'
 result_file_way = '/home/maksym/project/Hillel_Python_basic/Tasks/hw15/result.txt'
 
 with open(math_file_way, 'r') as file_math:
-    with open(result_file_way, 'w') as file_result:
-        for line in file_math:
-            equation_list = line.split()
-            try:
-                result = calc(equation_list[1])
-                file_result.write(f'{equation_list[0]} {equation_list[1]} {equation_list[-1]} = {result(int(equation_list[0]), int(equation_list[-1]))}\n')
-            except IndexError:
-                file_result.write(f'{line} = error\n')
-            except ValueError:
-                file_result.write(f'{equation_list[0]} {equation_list[1]} {equation_list[-1]} = error\n')
+    items = [line.strip() for line in file_math.readlines() if len(line.strip()) > 0]
+    result_lst = []
+
+    for item in items:
+        try:
+            item_1, operator, item_2 = map(str.strip, item.split())
+            item_1, item_2 = int(item_1), int(item_2)
+            result = calc(operator)(item_1, item_2)
+        except Exception as e:
+            output = f'{item} = error'
+        else:
+            output = f'{item} = {result}'
+        result_lst.append(output)  
+with open(result_file_way, 'w') as file_result:
+    file_result.write('\n'.join(result_lst))
