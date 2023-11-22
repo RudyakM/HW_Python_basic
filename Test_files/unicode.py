@@ -1,2 +1,0 @@
-print(chr(0x1F988))
-print(chr(0x1F41D))
