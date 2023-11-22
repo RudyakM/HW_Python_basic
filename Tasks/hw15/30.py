@@ -8,21 +8,28 @@ def calc(operation='+'):
     else:
         return err()
 
+
 def plus(x=None, y=None):
     return lambda x, y: x + y
+
 
 def minus(x=None, y=None):
     return lambda x, y: x - y
 
+
 def multiply(x=None, y=None):
     return lambda x, y: x * y
+
 
 def err(x=None, y=None):
     return lambda x, y: 'something went wrong...'
 
 
-with open('/home/maksym/project/HW_Python_basic/Tasks/hw15/math.txt', 'r') as file_math:
-    with open('/home/maksym/project/HW_Python_basic/Tasks/hw15/result.txt', 'w') as file_result:
+math_file_way = '/home/maksym/project/Hillel_Python_basic/Tasks/hw15/math.txt'
+result_file_way = '/home/maksym/project/Hillel_Python_basic/Tasks/hw15/result.txt'
+
+with open(math_file_way, 'r') as file_math:
+    with open(result_file_way, 'w') as file_result:
         for line in file_math:
             lst = line.split()
             try:
