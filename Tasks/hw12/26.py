@@ -1,5 +1,5 @@
 def round_cost(x):
-    total_cost = list()
+    total_cost = []
     for i in cost_order:
         i = round(i, 2)
         total_cost.append(i)
@@ -15,9 +15,9 @@ contacts = [
     [88112, 'Einfuhrung in Python3, Bernd Klein', 3, 24.99]
     ]
 
-order = list()
-amount = list()
-price = list()
+order = []
+amount = []
+price = []
 
 for i in contacts:
     order.append(i[0])
