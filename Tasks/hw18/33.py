@@ -34,14 +34,16 @@ class DigitalCounter:
 
 value = 0
 begin = 0
-end = 999999
+end = 999
 
-while True:
-    point = DigitalCounter(begin, end, value)
-    point.down()
-    value = point.get_value()
-    if point.is_last_operation_up:
-        print('True')
-    else:
-        print('False')
-    print(value)
+
+point = DigitalCounter(begin, end, value)
+print(point.get_value())
+
+point.down()
+point.down()
+print(point.is_last_operation_up)
+point.up()
+print(point.is_last_operation_up)
+
+print(point.get_value())    
