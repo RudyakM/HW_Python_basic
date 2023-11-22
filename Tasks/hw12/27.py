@@ -1,21 +1,17 @@
 def calc(operation='+'):
-    if operation == '+':
-        return plus()
-    elif operation == '-':  
-        return minus()
-    elif operation == '*':  
-        return multiply()
-    else:
-        return err()
+    operation_plus = '+'
+    operation_minus = '-'
+    operation_mult = '*'
 
-def plus(x=None, y=None):
-    return lambda x, y: x + y
-def minus(x=None, y=None):
-    return lambda x, y: x - y
-def multiply(x=None, y=None):
-    return lambda x, y: x * y
-def err(x=None, y=None):
-    return lambda x, y: 'Эта операция недопустима!'
+    for _ in operation:
+        if _ == operation_plus:
+            return lambda x, y: x + y
+        elif _ == operation_minus:
+            return lambda x, y: x - y
+        elif _ == operation_mult:
+            return lambda x, y: x * y
+        else:
+            return lambda x, y: 'Эта операция недопустима!'
 
 
 
