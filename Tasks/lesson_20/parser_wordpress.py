@@ -15,6 +15,7 @@ if r.status_code == 200:
         print(f'\n{categories}:')
         articles = data.find_all('article')
         for article in articles:
-            rating = article.find('span', class_="rating-count")
-            stars = article.find('div', class_="wporg-ratings")
-            print(article.find("header").text.strip('\n'), '===> ', stars.get_attribute_list('aria-label'), rating.find('a').text)
+            plugin = article.find("header").text.strip('\n')
+            rating = article.find('span', class_="rating-count").find('a').text
+            stars = article.find('div', class_="wporg-ratings").get_attribute_list('aria-label')
+            print(plugin, '===> ', stars, rating)
