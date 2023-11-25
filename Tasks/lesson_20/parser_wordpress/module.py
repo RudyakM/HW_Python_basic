@@ -34,7 +34,7 @@ class ParserWordPress:
 
     def print_category(category):
         bingo = '=' * 50
-        print(f'\n{bingo}')
+        print(f'\n\n\n{bingo}')
         print(f'Category: {category}')
         print(bingo)
 
