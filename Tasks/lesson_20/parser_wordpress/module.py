@@ -6,6 +6,7 @@ class ParserWordPress:
 
 
     def __init__(self):
+        self.bingo = '=' * 50
         self.url = 'https://wordpress.org/plugins/'
 
 
@@ -23,26 +24,24 @@ class ParserWordPress:
     def get_info(self, sections):
         for data in sections:
             category = data.find('h2').text.strip('\n')
-            ParserWordPress.print_category(category)
+            ParserWordPress.print_category(self, category)
             articles = data.find_all('article')
             for article in articles:
                 plugin = article.find("header").text.strip('\n')
                 rating = article.find('span', class_="rating-count").find('a').text
                 stars = article.find('div', class_="wporg-ratings").get_attribute_list('aria-label')
-                ParserWordPress.print_plugin_info(plugin, rating, stars)
+                ParserWordPress.print_plugin_info(self, plugin, rating, stars)
 
 
-    def print_category(category):
-        bingo = '=' * 50
-        print(f'\n\n\n{bingo}')
+    def print_category(self, category):
+        print(f'\n\n\n{self.bingo}')
         print(f'Category: {category}')
-        print(bingo)
+        print(self.bingo)
 
 
-    def print_plugin_info(plugin, rating, stars):
-        bingo = '=' * 50
+    def print_plugin_info(self, plugin, rating, stars):
         print(f'Plugin name: {plugin}')
         print(f'Stars: {stars}')
         print(f'Plugin rating: {rating}')
-        print(bingo)
+        print(self.bingo)
 
